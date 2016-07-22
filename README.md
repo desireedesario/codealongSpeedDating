@@ -4,26 +4,17 @@
 
 ####Link to page: http://bit.ly/2afoH8N
 
-####Link to Trello board: https://trello.com/b/sSWL5ba5/project-1
+####Link to Trello board: https://trello.com/b/vfUisobc/project-2
 
 #####Welcome to dev’s codealongs! Where developers hack through speed dating and find that perfect coding partner they have always dreamed about.
 
 #####Whether you’re developing a friendship, co-partner, or more, dev codealongs is a great way to meet coders like you and develop relationships while programming.
 
-#####Each “codealong” is developer dating orientated, which means each codealong will be a language based meetup with a speed dating theme. 
+#####Each “codealong” is developer dating orientated, which means each codealong will be a language based meetup with a speed dating theme.
 
 #How it works:
-- kill all the enemies on the board!
-- Use your shooter (Spacebar) to defeat your enemies.
-- Destroy all enemies to win.
-
-##Controls
-
-- Left Arrow - Left
-- Right Arrow - Right
-- Down Arrow - Down
-- Up Arrow - Up
-- SpaceBar - Pump
+- You will be paired with a partner, both male and female, and solve a “code challenge”. You will have 7-10 minutes with each partner, five minute to converse about your similarities and differences of code, and then switch to another partner for another fun challenge.
+- Each of these codealong meetups will be created on the program of your choosing, and our code challenges are not built to stump or anger you or your partner, but are simple fun challenges built for coders with all types of experience.
 
 ###WireFrames
 
@@ -43,18 +34,6 @@
 ###Technologies Used
 - RubyOnRails4
 - HTML/CSS/JavaScript
-
-
-STEPS
-- create a basic file structure
-- add a readme.md
-- make a git and github repo
-- render the board
-  -minimum styling with CSS
-
-  ????
-
-- make dig dug!
 
 ---
 
