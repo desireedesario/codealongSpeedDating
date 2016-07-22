@@ -35,6 +35,54 @@
 - ERD
 ![ERD](wireframes/ERD.png)
 
+##Models:
+
+###Users:
+- Username: string
+- Password: string 
+
+###Profiles:
+- User_id:
+- First_name
+- Last_name
+- Img: string (used with magick with paperclip)
+- Gender: string
+- Description: string
+
+###Snippet
+- Profile_id
+- language_id
+- Content
+
+###Language
+- Ruby
+- JavaScript
+- HTML/CSS
+- Java
+- Python
+
+###Messages:
+- Title: string
+- Content: string
+
+###Codealongs:
+- Language_id
+- Location: string
+- Date: datetime
+- Description
+
+##Joined Tables :
+(these are single because each record of messages/profiles has one ID)
+
+###Messages_pr]ofiles :
+- Profile_id
+- Message_id
+
+###Codealongs_profiles :
+- Profile_id
+- Codealong_id
+
+
 ###Technologies Used
 - RubyOnRails4
 - HTML/CSS/JavaScript
@@ -48,6 +96,3 @@
 
 
 ###Installation/StartUp Instructions
-
-
-####(Set MVP for future notice):
