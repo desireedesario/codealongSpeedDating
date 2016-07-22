@@ -18,18 +18,22 @@
 
 ###WireFrames
 
-- Hitting the Monster
-![Hitting The Monster](assets/img/wireframe/hitMonster.jpeg)
-- How I will organize my functions
-![How I will organize my functions](assets/img/wireframe/howToOrganizeFunctions.jpeg)
-- How the mainscreen will look
-![How the mainscreen will look](assets/img/wireframe/MainScreenNotes.jpeg)
-- Monster Movement
-![Monster Movement](assets/img/wireframe/monsterMovement.jpeg)
-- (Maybe) add timer counting up
-![Maybe add timer counting up](assets/img/wireframe/timeCounter.jpeg)
-- Setting a Win Logic
-![Setting a Win Logic](assets/img/wireframe/winLogic.jpeg)
+- Main Page
+![Homepage](wireframes/PAGE1.png)
+- Fill Out Form
+![Fill Out Form](wireframes/FillOutForm.png)
+- Picking A Language
+![PickALanguage](wireframes/PickALanguage.png)
+- Picking A Codealong
+![Picking A Codealong](wireframes/pickACodealong.png)
+- A List Of Data Input
+![a list Of Data Input](wireframes/listOfDataInput.png)
+- View Data (Codealong)
+![View Data](wireframes/ViewData.png)
+
+##ERD
+- ERD
+![ERD](wireframes/ERD.png)
 
 ###Technologies Used
 - RubyOnRails4
