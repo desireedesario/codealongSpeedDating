@@ -15,6 +15,9 @@
 *= require_tree .
 */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
 h1 {
  text-align: center;
 }
@@ -76,7 +79,3 @@ a:hover {
      clear: both;
      height: 0;
      }
-
-
- @import "bootstrap-sprockets";
- @import "bootstrap";
