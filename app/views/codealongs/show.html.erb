@@ -1,0 +1,8 @@
+
+<h1> Codealong: <%= @codealong.location %> </h1>
+
+<p>Welcome to <%= @codealong.location %>'s codealong! Pair up with and collaborate with others like you at this fun amazing get together! The <%= @codealong.location %> will begin at  <%= @codealong.date %>, and we will have drinks and hors d'oeuvres provided (vegatarian plates also provided).</p>
+
+<%= link_to "Check out more Codealongs!", codealongs_path %>
+
+<%= link_to "Delete this codealong", codealong_path, method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"} %>
