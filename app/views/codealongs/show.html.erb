@@ -6,25 +6,22 @@
 <p>Welcome to <%= @codealong.location %>'s codealong! Pair up with and collaborate with others like you at this fun amazing get together! The <%= @codealong.location %> will begin at  <%= @codealong.date %>, and we will have drinks and hors d'oeuvres provided (vegatarian plates also provided).</p>
 
 <ul class="data">
-  <% @language.codealongs.each do |codealong| %>
     <li>
       <strong>
-        <%= codealong.location %>
-      </strong> <%= codealong.date %>
+        <%= @codealong.location %>
+      </strong> <%= @codealong.date %>
     <li>
-      <%= codealong.description %>
+      <%= @codealong.description %>
     </li>
     <li>
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'View', codealong %></button>
+      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'View', @codealong %></button>
 
-<%= if user_signed_in? && current_user == codealong.users.first %>
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to "Edit", edit_codealong_path(codealong) %></button>
+      <button type="button" class="btn btn-default navbar-btn"><%= link_to "Edit", edit_codealong_path(@codealong) %></button>
 
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to "Delete this codealong", codealong_path(codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"} %></button>
-<% end %>
+
+      <button type="button" class="btn btn-default navbar-btn"><%= link_to "Delete this codealong", codealong_path(@codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"} %></button>
     </li>
 
-  <% end %>
 </ul>
 
 <%= link_to "Check out more Codealongs!", languages_path %>
