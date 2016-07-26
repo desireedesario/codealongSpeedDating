@@ -17,11 +17,13 @@
     <li>
       <button type="button" class="btn btn-default navbar-btn"><%= link_to 'View', codealong %></button>
 
-
+<%= if user_signed_in? && current_user == codealong.users.first %>
       <button type="button" class="btn btn-default navbar-btn"><%= link_to "Edit", edit_codealong_path(codealong) %></button>
 
       <button type="button" class="btn btn-default navbar-btn"><%= link_to "Delete this codealong", codealong_path(codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"} %></button>
+<% end %>
     </li>
+
   <% end %>
 </ul>
 

@@ -6,7 +6,7 @@ class CodealongsController < ApplicationController
 
   def show
     @codealong = Codealong.find(params[:id])
-    @language = Language.find(params[:id])
+    @language = @codealong.language
   end
 
   def new
