@@ -9,19 +9,19 @@
     <li>
       <strong>
         <%= @codealong.location %>
-      </strong> <%= @codealong.date %>
+      </strong>
+      <%= @codealong.date %>
     <li>
       <%= @codealong.description %>
     </li>
     <li>
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'View', @codealong %></button>
+      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'Attend This Codealong', @codealong %></button>
 
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to "Edit", edit_codealong_path(@codealong) %></button>
+    <%= link_to "Edit", edit_codealong_path(@codealong), :class => 'btn btn-default navbar-btn' if @codealong.users.first == current_user %>
 
 
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to "Delete this codealong", codealong_path(@codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"} %></button>
+      <%= link_to "Delete this codealong", codealong_path(@codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"}, :class => 'btn btn-default navbar-btn' if @codealong.users.first == current_user %>
     </li>
-
 </ul>
 
 <%= link_to "Check out more Codealongs!", languages_path %>

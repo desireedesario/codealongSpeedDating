@@ -3,33 +3,35 @@
 <center><img src="https://creator.wework.com/wp-content/uploads/2016/03/The-Power-Couple-in-South-Florida%E2%80%99s-Coding-Scene3.jpg" alt="codingalongs" class="margin-image" height="400" width="600"></center>
 <br>
 <div class="content">
-<h3 class="center-text">Welcome to the Dev Codealongs!</h3>
 
-<p>Welcome to dev’s codealongs! Where developers hack through speed dating and find that perfect coding partner they have always dreamed about. </p>
+	<%= link_to "CHECK OUT CODEALONGS", languages_path, :class => 'btnPill'  %>
 
-<p>Whether you’re developing a friendship, co-partner, or more, dev codealongs is a great way to meet coders like you and develop relationships while programming. </p>
+	<h3 class="center-text">Welcome to the Dev Codealongs!</h3>
 
-<p>Each “codealong” is developer dating orientated, which means each codealong will be a language based meetup with a speed dating theme. </p>
-<!-- Show links to login, sign-up OR if user signed in show edit profile and sign-out -->
-<% if user_signed_in? %>
-		Logged in as <strong><%= current_user.email %></strong>.
-		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-	<% else %>
-		<%= link_to "Sign up", new_user_registration_path, :class => 'buttonPill'  %><%= link_to "Login", new_user_session_path, :class => 'buttonPill'  %>
-	<% end %>
+	<p>Welcome to dev’s codealongs! Where developers hack through speed dating and find that perfect coding partner they have always dreamed about. </p>
 
-<div class="clearfix"></div>
+	<p>Whether you’re developing a friendship, co-partner, or more, dev codealongs is a great way to meet coders like you and develop relationships while programming. </p>
 
-<!-- I MUST PUT SOMETHING AMAZING HERE TO CUT IT UPPP! -->
+	<p>Each “codealong” is developer dating orientated, which means each codealong will be a language based meetup with a speed dating theme. </p>
+	<!-- Show links to login, sign-up OR if user signed in show edit profile and sign-out -->
 
-<h4 class="center-text">How it works:</h4>
+			<center>
+				<%= link_to "Sign up", new_user_registration_path, :class => 'btnPill'  %>
+				<%= link_to "Login", new_user_session_path, :class => 'btnPill'  %>
+			</center>
 
-<p>You will be paired with a partner, both male and female, and solve a “code challenge”. You will have 7-10 minutes with each partner, five minute to converse about your similarities and differences of code, and then switch to another partner for another fun challenge.
-</p>
 
-<p>Each of these codealong meetups will be created on the program of your choosing, and our code challenges are not built to stump or anger you or your partner, but are simple fun challenges built for coders with all types of experience. </p>
+	<div class="clearfix"></div>
 
-<center><img src="https://avatars1.githubusercontent.com/u/15522350?v=3&s=400" alt="end" class="margin-image"></center>
+	<!-- I MUST PUT SOMETHING AMAZING HERE TO CUT IT UPPP! -->
+
+	<h4 class="center-text">How it works:</h4>
+
+	<p>You will be paired with a partner, both male and female, and solve a “code challenge”. You will have 7-10 minutes with each partner, five minute to converse about your similarities and differences of code, and then switch to another partner for another fun challenge.
+	</p>
+
+	<p>Each of these codealong meetups will be created on the program of your choosing, and our code challenges are not built to stump or anger you or your partner, but are simple fun challenges built for coders with all types of experience. </p>
+
+	<center><img src="https://avatars1.githubusercontent.com/u/15522350?v=3&s=400" alt="end" class="margin-image"></center>
 
 </div>
