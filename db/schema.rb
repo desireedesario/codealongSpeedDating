@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726163202) do
+ActiveRecord::Schema.define(version: 20160726165220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20160726163202) do
   add_index "codealongs_languages_users", ["codealong_id"], name: "index_codealongs_languages_users_on_codealong_id", using: :btree
   add_index "codealongs_languages_users", ["language_id"], name: "index_codealongs_languages_users_on_language_id", using: :btree
   add_index "codealongs_languages_users", ["user_id"], name: "index_codealongs_languages_users_on_user_id", using: :btree
+
+  create_table "codealongs_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "codealong_id"
+  end
+
+  add_index "codealongs_users", ["codealong_id"], name: "index_codealongs_users_on_codealong_id", using: :btree
+  add_index "codealongs_users", ["user_id"], name: "index_codealongs_users_on_user_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
@@ -90,6 +98,8 @@ ActiveRecord::Schema.define(version: 20160726163202) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "codealongs", "languages"
+  add_foreign_key "codealongs_users", "codealongs"
+  add_foreign_key "codealongs_users", "users"
   add_foreign_key "messages", "codealongs"
   add_foreign_key "messages", "users"
   add_foreign_key "snippets", "languages"
