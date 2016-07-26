@@ -6,6 +6,7 @@ class CodealongsController < ApplicationController
 
   def show
     @codealong = Codealong.find(params[:id])
+    @language = Language.find(params[:id])
   end
 
   def new
@@ -39,7 +40,7 @@ class CodealongsController < ApplicationController
   def destroy
     @codealong = Codealong.find(params[:id])
     @codealong.destroy
-    redirect_to codealong_path
+    redirect_to codealongs_path
   end
 
   private

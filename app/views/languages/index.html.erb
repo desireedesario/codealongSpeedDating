@@ -1,0 +1,15 @@
+<h1>Pick a language to find your codealong!</h1>
+
+<ul class="data">
+    <% @languages.each do |language| %>
+    <li>
+        <strong>
+            <%= image_tag("#{language.name.downcase}.png")%>
+        </strong>
+    </li>
+    <li>
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to "See codealongs", language_path(language) %></button>
+    </li>
+    <% end %>
+
+</ul>

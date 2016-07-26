@@ -1,0 +1,21 @@
+<h1>These are the codealongs for <%= @language.name %></h1>
+<ul class="data">
+  <% @language.codealongs.each do |ca| %>
+  <li>
+    <strong>
+    <%= ca.location %>
+  </strong> <%= ca.date %>
+  </li>
+  <li>
+    <%= ca.description %>
+  </li>
+  <li>
+    <button type="button" class="btn btn-default navbar-btn">
+      <%= link_to "View Codealong", codealong_path(ca) %>
+    </button>
+  </li>
+  <% end %>
+  <li>
+    <%= link_to 'Create a New Codealong', new_codealong_path %>
+  </li>
+</ul>

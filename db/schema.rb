@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722233345) do
+ActiveRecord::Schema.define(version: 20160726163202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20160722233345) do
   end
 
   add_index "codealongs", ["language_id"], name: "index_codealongs_on_language_id", using: :btree
+
+  create_table "codealongs_languages_users", id: false, force: :cascade do |t|
+    t.integer "codealong_id"
+    t.integer "language_id"
+    t.integer "user_id"
+  end
+
+  add_index "codealongs_languages_users", ["codealong_id"], name: "index_codealongs_languages_users_on_codealong_id", using: :btree
+  add_index "codealongs_languages_users", ["language_id"], name: "index_codealongs_languages_users_on_language_id", using: :btree
+  add_index "codealongs_languages_users", ["user_id"], name: "index_codealongs_languages_users_on_user_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
