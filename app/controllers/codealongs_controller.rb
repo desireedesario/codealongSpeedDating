@@ -1,12 +1,9 @@
 class CodealongsController < ApplicationController
-
-  def index
-    @codealongs = Codealong.all
-  end
+  before_action :authenticate_user!
 
   def show
     @codealong = Codealong.find(params[:id])
-    @language = @codealong.language
+    @message = Message.new
   end
 
   def new

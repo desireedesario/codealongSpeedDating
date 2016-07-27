@@ -35,6 +35,14 @@
   </ul>
 </ul>
 
+    <%= render 'shared/formfield' %>
+  <ul>
+    <% @codealong.messages.each do |message| %>
+    <li><%= message.user.first_name %></li>
+    <li><%= message.content %></li>
+    <% end %>
+  </ul>
+
 <%= link_to "Check out more Codealongs!", languages_path %>
 
 <%= link_to "Home", root_path %>

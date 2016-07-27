@@ -1,0 +1,10 @@
+<strong>Create a new comment below</strong>
+
+<%= form_for [@codealong, @message] do |f| %>
+  <div>
+    <%= f.label 'New Comment' %>
+    <%= f.text_field :content %>
+  </div>
+    <%= f.submit "Add this comment" %>
+
+<% end %>

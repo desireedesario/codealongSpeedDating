@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 
   patch "/codealongs/:id" => 'codealongs#attend_codealong', as: :attend_codealong
 
+  resources :codealongs do
+    resources :messages
+  end 
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
