@@ -10,14 +10,16 @@ class CodealongsController < ApplicationController
   end
 
   def new
+    @languages = Language.all
     @codealong = Codealong.new
   end
 
   def create
-    @codealong = Codealong.create(params.require(:codealong).permit(:location, :date, :description))
+    @languages = Language.all
+    @codealong = Codealong.create(params.require(:codealong).permit(:location, :date, :description, :language_id))
 
     if @codealong.save
-      redirect_to codealongs_path
+      redirect_to language_path(@codealong.language)
     else
       render :new
     end
@@ -41,6 +43,17 @@ class CodealongsController < ApplicationController
     @codealong = Codealong.find(params[:id])
     @codealong.destroy
     redirect_to codealongs_path
+  end
+
+  def attend_codealong
+    @codealong = Codealong.find(params[:id])
+    @codealong.users << current_user
+
+    if @codealong.save
+      redirect_to codealong_path(@codealong), notice: "You joined"
+    else
+      render :show
+    end
   end
 
   private

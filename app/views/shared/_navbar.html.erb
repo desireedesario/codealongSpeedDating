@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse navbar-static-top" style="color:#efefef;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,6 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <%= image_tag("logo.png", :alt => "Dev Codealongs") %>
       <%= link_to "Dev Codealongs", root_path, :class => "navbar-brand" %>
     </div>
 
@@ -28,7 +29,7 @@
             <!-- Show links to login, sign-up OR if user signed in show edit profile and sign-out -->
             <p align="right">
               <% if user_signed_in? %>
-                Logged in as <strong><%= current_user.first_name %></strong>
+                <strong style="padding-right:45px;">Codealongs with <%= current_user.first_name %></strong>
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
               <% else %>

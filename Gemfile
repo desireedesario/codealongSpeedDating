@@ -31,6 +31,13 @@ gem 'hirb'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+#gem 'heroku' connecting to Heroku database server
+ruby '2.2.3'
+
+group :production do
+  gem 'rails_12factor'
+end
+
 #gem that allows users and email password security
 gem 'devise'
 # Use Capistrano for deployment

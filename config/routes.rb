@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get "languages/:id" => "languages#show", as: :language
 
+  patch "/codealongs/:id" => 'codealongs#attend_codealong', as: :attend_codealong
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
