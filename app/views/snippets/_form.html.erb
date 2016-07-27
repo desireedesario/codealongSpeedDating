@@ -1,0 +1,21 @@
+<h1>Add a new Snippet!</h1>
+
+<p>
+  How It Works: To enter this codealong, you must display that you have an understanding of this language. Please enter a snippet of code to view these codealongs.
+</p>
+
+<%= form_for @snippet do |f| %>
+  <div>
+    <%= f.label "Enter a snippet of your experience in this language" %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div>
+    <%= f.label :language %>
+    <%= f.collection_select :language_id, @languages, :id, :name %>
+  </div>
+    <%= f.submit "Submit this Snippet" %>
+
+<% end %>
+
+ <%= link_to "Click to go back to more codealongs!", codealongs_path %>

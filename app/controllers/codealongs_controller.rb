@@ -44,12 +44,12 @@ class CodealongsController < ApplicationController
 
   def attend_codealong
     @codealong = Codealong.find(params[:id])
-    @codealong.users << current_user
-
-    if @codealong.save
-      redirect_to codealong_path(@codealong), notice: "You joined"
+    @codealong.save
+    if @codealong.users == current_user
+      redirect_to codealong_path(@codealong), notice: "You are already in this codealong"
     else
-      render :show
+      @codealong.users << current_user
+      redirect_to codealong_path(@codealong), notice: "You joined"
     end
   end
 
