@@ -15,9 +15,13 @@
       <%= @codealong.description %>
     </li>
     <li>
-      <%= form_for [@codealong], :url => attend_codealong_path, :html => { :method => :patch } do |f| %>
-      <%= f.submit 'Attend This Codealong', :class => 'btn btn-default navbar-btn' %>
-      <% end %>
+    <% if current_user == true %>
+          <p>You are in this event</p>
+      <% else %>
+        <%= form_for [@codealong], :url => attend_codealong_path, :html => { :method => :patch } do |f| %>
+          <%= f.submit 'Attend This Codealong', :class => 'btn btn-default navbar-btn' %>
+        <% end %>
+    <% end  %>
 
     <%= link_to "Edit", edit_codealong_path(@codealong), :class => 'btn btn-default navbar-btn' if @codealong.users.first == current_user %>
 
