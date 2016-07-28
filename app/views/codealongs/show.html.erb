@@ -1,44 +1,88 @@
 <div class="btn-group" style="align:right;">
-  <%= link_to "Home", root_path, :class => 'btn btn-default navbar-btn' %>
-  <%= link_to "Check out more Codealongs!", languages_path, :class => 'btn btn-default navbar-btn' %>
+    <%= link_to "Home", root_path, :class => 'btn btn-default navbar-btn' %>
+    <%= link_to "Check out more Codealongs!", languages_path, :class => 'btn btn-default navbar-btn' %>
 </div>
 
-<h1> Codealong: <%= @codealong.location %> </h1>
+<h1>
+    Codealong:
+    <%= @codealong.location %>
+</h1>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p>Welcome to
+                <%= @codealong.location %>'s codealong! Pair up with and collaborate with others like you at this fun amazing get together! The
+                <%= @codealong.location %>
+                will begin at
+                <%= @codealong.date %>, and we will have drinks and hors d'oeuvres provided (vegatarian plates also provided).</p>
+        </div>
+        <div class="panel-body paddng">
+            <ul>
+                <li>
+                    <strong>
+                        <%= @codealong.location %>
+                    </strong>
+                    <%= @codealong.date %>
+                <li>
+                    <%= @codealong.description %>
+                </li>
+                <li>
+                    <% if current_user == true %>
+                    <p>You are in this event</p>
+                <% else %>
+                    <%= form_for [@codealong], :url => attend_codealong_path, :html => { :method => :patch } do |f| %>
+                    <%= f.submit 'Attend This Codealong', :class => 'btn btn-primary navbar-btn' %>
+                    <% end %>
+                    <% end  %>
 
-<p>Welcome to <%= @codealong.location %>'s codealong! Pair up with and collaborate with others like you at this fun amazing get together! The <%= @codealong.location %> will begin at  <%= @codealong.date %>, and we will have drinks and hors d'oeuvres provided (vegatarian plates also provided).</p>
+                    <%= link_to "Edit", edit_codealong_path(@codealong), :class => 'btn btn-primary navbar-btn' if @codealong.users.first == current_user %>
 
-<ul class="data">
-    <li>
-      <strong>
-        <%= @codealong.location %>
-      </strong>
-      <%= @codealong.date %>
-    <li>
-      <%= @codealong.description %>
-    </li>
-    <li>
-    <% if current_user == true %>
-          <p>You are in this event</p>
-      <% else %>
-        <%= form_for [@codealong], :url => attend_codealong_path, :html => { :method => :patch } do |f| %>
-          <%= f.submit 'Attend This Codealong', :class => 'btn btn-primary navbar-btn' %>
+                    <%= link_to "Delete this codealong", codealong_path(@codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"}, :class => 'btn btn-danger navbar-btn' if @codealong.users.first == current_user %>
+                </li>
+
+                <p>SEE OTHERS WHO ARE COMING</p>
+                <ul>
+                    <% @codealong.users.each do |user| %>
+                    <li>
+                        <%= user.first_name %>
+                        <%= user.last_name %>
+                    </li>
+                    <% end %>
+                </ul>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default" style="padding:1%; background-color:#dbeeff;">
+    <%= image_tag("comments.png", :alt => "comment bubble") %>
+    <strong>View Codealong Comments:</strong>
+    <ul>
+        <% @codealong.messages.each do |message| %>
+        <li>
+            <h4>
+                <u><%= image_tag("userComment.png", :alt => "comment bubble") %><%= message.user.first_name %>
+                    <%= message.user.last_name %></u>
+            </h4>
+        </li>
+        <li><%= message.content %></li>
+        <li><hr></li>
         <% end %>
-    <% end  %>
+    </ul>
+</div>
 
-    <%= link_to "Edit", edit_codealong_path(@codealong), :class => 'btn btn-primary navbar-btn' if @codealong.users.first == current_user %>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <p>Create a new comment below</p>
+    </div>
+    <div class="panel-body paddng">
+        <%= form_for [@codealong, @message] do |f| %>
+        <div>
+            <strong><%= f.label 'New Comment' %></strong><br>
+            <%= f.text_area :content, :class => "form-control", :rows => "5", :id => "comment" %>
+        </div>
+        <%= f.submit "Add this comment", :class => 'btn btn-primary navbar-btn' %>
 
+        <% end %>
+    </div>
+</div>
 
-      <%= link_to "Delete this codealong", codealong_path(@codealong), method: :delete, data: {confirm: "Are you sure you want to delete this codealong?"}, :class => 'btn btn-danger navbar-btn' if @codealong.users.first == current_user %>
-    </li>
-
-    <p>SEE OTHERS WHO ARE COMING</p>
-  <ul>
-    <% @codealong.users.each do |user| %>
-    <li>
-      <%= user.first_name %> <%= user.last_name %>
-    </li>
-    <% end %>
-  </ul>
-</ul>
-
-  <%= render 'codealongs/formfield' %>
+</div>
