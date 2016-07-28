@@ -57,5 +57,5 @@ class CodealongsController < ApplicationController
   def codealong_params
     params.require(:codealong).permit(:location, :date, :description)
   end
-
+  
 end

@@ -1,6 +1,7 @@
 <h1>Pick a language to find your codealong!</h1>
-
-
-    <% @languages.each do |language| %>
-            <%= link_to image_tag("#{language.name.downcase}.png"), language_path(language), :class => 'floatLeft' %>
-    <% end %>
+<div class="words">
+  <p style="margin-bottom:5%;">Each codealong will consist of others who are also interested and experienced in this language. Please select the codealong language you are experienced with.</p>
+  <% @languages.each do |language| %>
+          <%= link_to image_tag("#{language.name.downcase}.png"), language_path(language), :class => 'floatLeft' %>
+  <% end %>
+</div>

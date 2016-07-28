@@ -15,46 +15,72 @@
 *= require_tree .
 */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
 
+//adds responsiveness to the entire site
 .container {
   background-image: url("background.png");
   background-repeat: repeat;
   background-size: 100%;
 }
 
+//changing the font on all of my p tags
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+//white font for the navbar when hovered over
 navbar-link {
-  color: white;
+  color: #777777;
 }
 
-.content {
-   margin: 3%;
- }
-
-h1 {
- text-align: center;
- font-family: 'Monda', sans-serif;
- text-transform: uppercase;
+//add padding and background behind content on each page
+.words {
+  background-color: rgba(255,255,255, 0.5);
+  padding: 2%;
+  border-radius: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-img {
-  margin-bottom: 5%;
-}
-
-.subtitle {
-  margin-top: 10%;
-}
-
-// this is the main data divs
+// main data divs
 .data {
-  background-color: #e6e6e6;
+  background-color: rgba(255,255,255, 0.5);
   border-radius: 25px;
   padding-top: 5%;
   padding-bottom: 5%;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
+}
+
+//adds space around content on each page
+.content {
+  margin: 3%;
+}
+
+.paddng {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+//title on each page
+h1 {
+  text-align: center;
+  font-family: 'Monda', sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+//fixes front page
+img {
+  margin-bottom: 5%;
+}
+
+//subtitles
+.subtitle {
+  margin-top: 10%;
 }
 
 button {
@@ -81,14 +107,25 @@ li {
   border-radius: 75px;
   text-align: center;
   font-family: 'Monda', sans-serif;
+  font-size: 18px;
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
 }
 
+//pill buttons
 .btnPill:hover {
   font-weight: bold;
   text-decoration: none;
+}
+
+//float
+.floatLeft {
+  width: 40%;
+  height: 40%;
+  float: left;
+  padding: 3%;
+  margin: 0 auto;
 }
 
 //fixing float left
@@ -96,14 +133,9 @@ li {
   clear: both;
 }
 
-#centerIt {
+//fix floated objects
+.centerIt {
   width: 40%;
   height: 40%;
   margin: 0 auto;
-}
-
-.floatLeft {
-  float: left;
-  margin: 0 auto;
-  padding: 3%;
 }

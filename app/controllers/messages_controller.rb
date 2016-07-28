@@ -31,16 +31,6 @@ class MessagesController < ApplicationController
     redirect_to :back
   end
 
-  # def post_message
-  #   @message = Message.find(params[:id])
-  #   @message.users << current_user
-  #
-  #   if @message.save
-  #     redirect_to codealong_path(@codealong), notice: "Check out all of this codealong's messages!"
-  #   else
-  #     render :show
-  #   end
-
   private
   def set_codealong
     @codealong = Codealong.find(params[:codealong_id])

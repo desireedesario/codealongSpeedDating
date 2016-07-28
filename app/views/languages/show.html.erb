@@ -10,12 +10,13 @@
     <%= ca.description %>
   </li>
   <li>
-    <button type="button" class="btn btn-default navbar-btn">
-      <%= link_to "View Codealong", codealong_path(ca) %>
+      <%= link_to "View Codealong", codealong_path(ca), :class => "btn btn-primary navbar-btn" %>
     </button>
   </li>
   <% end %>
   <li>
-    <%= link_to 'Create a New Codealong', new_codealong_path %>
+    <h3 style="margin-top:8%;">Dont see an codealong close to you?<br>
+      <%= link_to 'Create a New Codealong', new_codealong_path, :class => "btn btn-info navbar-btn" %>
+    </h3>
   </li>
 </ul>
