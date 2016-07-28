@@ -1,28 +1,35 @@
-<h1>Add a new Codealong location and time!</h1>
+<div class="panel panel-default" style="margin-top:1%;">
+    <div class="panel-heading">
+        <strong>Add a new Codealong location and time!</strong>
+    </div>
+    <div class="form-group content">
+        <%= form_for @codealong do |f| %>
+        <div class="content">
+            <%= f.label :location %>
+            <%= f.text_field :location, :class => 'form-control' %>
+        </div>
+        <div class="content">
+            <%= f.label :date %>
+            (Must be created a week prior to the event)
+            <%= f.datetime_local_field :date, :class => 'form-control' %>
+        </div>
+        <div class="content">
+            <%= f.label "Tell us a bit more about your codealong in a short description:" %>
+            <%= f.text_area :description, :class => 'form-control' %>
+        </div>
 
-<%= form_for @codealong do |f| %>
-  <div>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-  <div>
-    <%= f.label :date %> (Must be created a week prior to the event)
-    <%= f.datetime_local_field :date %>
-  </div>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+        <div class="content">
+            <%= f.label :language %>
+            <%= f.collection_select :language_id, @languages, :id, :name, :class => 'form-control' %>
+        </div class="content">
+        <%= f.submit "Add this codealong", :class => 'btn btn-default navbar-btn' %>
+    </div>
 
-  <div>
-    <%= f.label :language %>
-    <%= f.collection_select :language_id, @languages, :id, :name %>
-  </div>
-    <%= f.submit "Add this codealong" %>
+    <% end %>
+    <p class="content">
+        <b>Warning: if codealongs do not gather more than 15 attendees by one week, this codealong will not be allowed to take place.</b>
+    </p>
 
-<% end %>
- <p>
-   Warning: if codealongs do not gather more than 15 attendees by one week, this codealong will not be allowed to take place.
- </p>
+    <%= link_to "Click to go back to more codealongs!", codealongs_path, :class => 'btn btn-primary navbar-btn content' %>
 
- <%= link_to "Click to go back to more codealongs!", codealongs_path %>
+</div>

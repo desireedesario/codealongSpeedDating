@@ -44,8 +44,7 @@
                 <ul>
                     <% @codealong.users.each do |user| %>
                     <li>
-                        <%= user.first_name %>
-                        <%= user.last_name %>
+                          <%= link_to "#{user.first_name} #{user.last_name}", user_show_path(user)  %>
                     </li>
                     <% end %>
                 </ul>
@@ -80,7 +79,6 @@
             <%= f.text_area :content, :class => "form-control", :rows => "5", :id => "comment" %>
         </div>
         <%= f.submit "Add this comment", :class => 'btn btn-primary navbar-btn' %>
-
         <% end %>
     </div>
 </div>
