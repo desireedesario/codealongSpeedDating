@@ -45,7 +45,6 @@ class CodealongsController < ApplicationController
   def attend_codealong
     @codealong = Codealong.find(params[:id])
     @codealong.save
-    # if @codealong.users == current_user
     if @codealong.users.include?current_user
         redirect_to codealong_path(@codealong), notice: "You are already in this codealong"
     else

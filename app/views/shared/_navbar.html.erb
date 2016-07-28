@@ -16,7 +16,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Profile <span class="sr-only">(current)</span></a></li>
+        <li class="active">
+          <%= link_to "Profile", user_show_path(current_user.id)  %>
+          <!-- <a href="#">Profile <span class="sr-only">(current)</span></a> -->
+        </li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Codealongs <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -27,7 +30,7 @@
         </li>
       </ul>
             <!-- Show links to login, sign-up OR if user signed in show edit profile and sign-out -->
-            <p align="right">
+            <p align="right" style="margin:1%;">
               <% if user_signed_in? %>
                 <strong style="padding-right:45px;">Codealongs with <%= current_user.first_name %></strong>
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |

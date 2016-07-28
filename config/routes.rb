@@ -3,34 +3,15 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
-  # get "codealongs/" => "codealongs#index"
-  #
-  # post "/codealongs" => "codealongs#create"
-  #
-  # get "/codealongs/new" => "codealongs#new", as: :new_codealong
-  #
-  # get "/codealongs/:id/edit" => "codealongs#edit", as: :edit_codealong
-  #
-  # get "/codealongs/:id" => "codealongs#show", as: :codealong
-  #
-  # patch "codealong/:id" => "codealong#update"
-  #
-  # delete "codealong/:id" => "codealong#destroy"
-  #
-  patch "/codealongs/attend/:id" => 'codealongs#attend_codealong', as: :attend_codealong
+  patch "/codealongs/attend/:id"  => 'codealongs#attend_codealong', as: :attend_codealong
+
+  get "languages/"                => "languages#index"
+  get "languages/:id"             => "languages#show", as: :language
+  get "users/:id"                 => "users#show", as: :user_show
 
   resources :codealongs do
     resources :messages
   end
-
-  get "languages/" => "languages#index"
-
-  get "languages/:id" => "languages#show", as: :language
-
-  get "users/:id" => "users#show"
-
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

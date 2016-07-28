@@ -1,5 +1,5 @@
 <h1><%= @user.username %></h1>
-<ul id="profile">
+<ul class="data">
 
     <li>
       <strong>
@@ -12,7 +12,7 @@
     </li>
   <% @user.codealongs.each do |codealong| %>
 
-  <li>
+  <!-- <li>
     <%= codealong.location %>
 
     <% codealong.users.each do |user| %>
@@ -22,7 +22,7 @@
     </strong>
     </li>
     <% end %>
-  </li>
+  </li> -->
 
   <% end %>
 
