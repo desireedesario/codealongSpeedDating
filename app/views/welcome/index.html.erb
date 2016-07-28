@@ -3,13 +3,11 @@
 <h1>DEV CODEALONGS</h1>
 	<center>
 		<%= image_tag("frontPage.png", :alt => "Dev Codealongs") %>
-
-		<div style="clear: both;"></div>
 	<br>
 	<%= link_to "CHECK OUT CODEALONGS", languages_path, :class => 'btnPill' %>
-	<div style="clear: both;"></div>
 
-	<h3>Welcome to the Dev Codealongs!</h3>
+
+	<h3 class="subtitle">Welcome to the Dev Codealongs!</h3>
 </center>
 
 	<p>Welcome to dev’s codealongs! Where developers hack through speed dating and find that perfect coding partner they have always dreamed about. </p>
@@ -20,7 +18,7 @@
 	<!-- Show links to login, sign-up OR if user signed in show edit profile and sign-out -->
 
 		<div id="centerIt">
-				<%= link_to "Sign up", new_user_registration_path, :class => 'btnPill child', :style => 'float:left;' %>
+				<%= link_to "Sign up", new_user_registration_path, :class => 'btnPill', :style => 'float:left;' %>
 				<%= link_to "Login", new_user_session_path, :class => 'btnPill', :style => 'float:left;' %>
 		</div>
 

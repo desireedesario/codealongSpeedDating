@@ -38,7 +38,11 @@ h1 {
  text-transform: uppercase;
 }
 
-h3 {
+img {
+  margin-bottom: 5%;
+}
+
+.subtitle {
   margin-top: 10%;
 }
 
@@ -93,5 +97,7 @@ li {
 }
 
 #centerIt {
-  right: 50%;
+  width: 40%;
+  height: 40%;
+  margin: 0 auto;
 }
