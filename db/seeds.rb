@@ -26,7 +26,9 @@ languages = Language.create([
 
   {name:"Ruby"},
 
-  {name:"Java"}
+  {name:"Java"},
+
+  {name:"Python"}
   ])
 
 snippets = Snippet.create([
