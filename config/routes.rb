@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "languages/"                => "languages#index"
   get "languages/:id"             => "languages#show", as: :language
   get "users/:id"                 => "users#show", as: :user_show
-
+  resources :password_resets
   resources :codealongs do
     resources :messages
   end

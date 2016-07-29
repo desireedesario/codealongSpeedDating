@@ -16,6 +16,15 @@
                 </strong><br>
                 <%= @user.description %>
             </li>
+            <li>
+              <strong>Codealongs I am going to:</strong>
+              <ul>
+                <% @user.codealongs.each do |codealong| %>
+                  <li><%= codealong.location %></li>
+                  <li><%= codealong.date.strftime("%A, %B %d, %Y") %></li>
+                <% end  %>
+              </ul>
+            </li>
         </ul>
     </div>
 </div>

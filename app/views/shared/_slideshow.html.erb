@@ -1,4 +1,4 @@
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<center>  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -6,13 +6,11 @@
       <li data-target="#myCarousel" data-slide-to="2"></li>
       <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
-
+  <%# @languages.each do |language| %>
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-
       <div class="item active">
-        <!-- <img src="../assets/images/javascript.png" alt="Javascript" width="460" height="345"> -->
-        <%= image_tag"javascript.png" %>
+        <%= link_to image_tag("javascriptslide.png", :class => 'img-car-size'), language_path(@languages.where(name: "JavaScript").first) %>
         <div class="carousel-caption">
           <h3>JavaScript</h3>
           <p>The programming language of HTML and the Web</p>
@@ -20,8 +18,8 @@
       </div>
 
       <div class="item">
-        <!-- <img src="../assets/images/ruby.png" alt="Ruby" width="460" height="345"> -->
-        <%= image_tag "ruby.png" %>
+        <!-- <img src="../assets/images/ruby.png" alt="Ruby" width="460" height="345px"> -->
+        <%= link_to image_tag("rubyslide.png", :class => 'img-car-size'), language_path(@languages.where(name: "Ruby").first) %>
         <div class="carousel-caption">
           <h3>Ruby</h3>
           <p>Dynamic, reflective, object-oriented, general-purpose programming language</p>
@@ -29,7 +27,7 @@
       </div>
 
       <div class="item">
-        <img src="../assets/images/java.png" alt="Java" width="460" height="345">
+      <%= link_to image_tag("javaslide.png", :class => 'img-car-size'), language_path(@languages.where(name: "Java").first) %>
         <div class="carousel-caption">
           <h3>Java</h3>
           <p>General-purpose computer programming language that is concurrent, class-based, object-oriented</p>
@@ -37,15 +35,14 @@
       </div>
 
       <div class="item">
-        <img src="../assets/images/python.png" alt="Python" width="460" height="345">
+      <%= link_to image_tag("pythonslide.png", :class => 'img-car-size'), language_path(@languages.where(name: "Python").first) %>
         <div class="carousel-caption">
           <h3>Python</h3>
           <p>High-level, general-purpose, interpreted, dynamic programming language.</p>
         </div>
       </div>
-
     </div>
-
+<%# end %>
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -57,6 +54,4 @@
     </a>
   </div>
 </div>
-
-</body>
-</html>
+</center>

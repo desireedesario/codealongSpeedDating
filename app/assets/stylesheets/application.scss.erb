@@ -18,8 +18,7 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
-//adds responsiveness to the entire site
-.container {
+body {
   background-image: url(<%= asset_path"background.png" %>);
   background-repeat: repeat;
   background-size: 100%;
@@ -138,4 +137,8 @@ li {
   width: 40%;
   height: 40%;
   margin: 0 auto;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img.img-car-size {
+  height: 345px;
 }
