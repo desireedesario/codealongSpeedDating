@@ -14,7 +14,7 @@
         <%= @codealong.location %>'s codealong! Pair up with and collaborate with others like you at this fun amazing get together! The
         <%= @codealong.location %>
         will begin at
-        <%= @codealong.date %>, and we will have drinks and hors d'oeuvres provided (vegatarian plates also provided).
+        <%= @codealong.date.strftime("%A, %B %d, %Y") %>, and we will have drinks and hors d'oeuvres provided (vegatarian plates also provided).
       </p>
     </div>
     <div class="panel-body paddng">
@@ -23,7 +23,7 @@
           <strong>
             <%= @codealong.location %>
           </strong>
-            <%= @codealong.date %>
+            <%= @codealong.date.strftime("%A, %B %d, %Y") %>
         <li>
           <%= @codealong.description %>
         </li>
