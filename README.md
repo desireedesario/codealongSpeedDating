@@ -2,9 +2,11 @@
 
 #Creating a developers dating site
 
-####Link to page: http://bit.ly/2afoH8N
+###Link to hosted app: https://devcodealongs.herokuapp.com/
 
-####Link to Trello board: https://trello.com/b/vfUisobc/project-2
+###Link to Trello: http://bit.ly/2ahp3b1
+
+###Installation/Startup Instructions: deploy on Heroku
 
 #####Welcome to dev’s codealongs! Where developers hack through speed dating and find that perfect coding partner they have always dreamed about.
 
@@ -39,7 +41,7 @@
 
 ###Users:
 - Username: string
-- Password: string 
+- Password: string
 
 ###Profiles:
 - User_id:
@@ -86,6 +88,17 @@
 ###Technologies Used
 - RubyOnRails4
 - HTML/CSS/JavaScript
+- MIIRKAT AWESOMENESS
+
+###Unsolved Problems/Next Steps:
+
+- I would like to filter out codealong locations to be locations of my user’s desire (city) so that the user could find the codealongs that are close by where the user live.
+- I want the user to be able to make a profile so that the user can show other users who he or she is and what type of code they know.
+- I would like to add more languages.
+- I want to be able to filter by language of the user’s choice so that the user does not have a page full language that the user is not interested in or have no experience with.
+- I want to be able to block individuals who the user does not wish to talk to.
+- I want to be able to have a “codealong” that the user can pair up online with an individual to work on so that the user is not limited to only going to a meetup to meet people. I want the user to be able to chat with another person online in real time in order to work together.
+
 
 ---
 

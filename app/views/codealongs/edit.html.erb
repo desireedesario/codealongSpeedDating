@@ -2,24 +2,22 @@
 
 <%= form_for @codealong do |f| %>
 <div>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
 </div>
 <div>
-
-    <%= f.label :date %>
-    (Must be create a week prior to the event)
-    <%= f.text_field :date %>
+  <%= f.label :date %>
+  (Must be create a week prior to the event)
+  <%= f.text_field :date %>
 </div>
 <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
 </div>
-<%= f.submit "Submit the changes to this codealong" %>
-
+  <%= f.submit "Submit the changes to this codealong" %>
 <% end %>
 <p>
-    Warning: if codealongs do not gather more than 15 attendees by one week, this codealong will not be allowed to take place.
+  Warning: if codealongs do not gather more than 15 attendees by on week, this codealong will not be allowed to take place.
 </p>
 
 <%= link_to "View Your Codealong", codealong_path(params[:id]) %>
